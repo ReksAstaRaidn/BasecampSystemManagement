@@ -48,10 +48,10 @@ if __name__ == "__main__":
         print("="*30)
         print("[1] Lihat Peta Jalur Pendakian")
         print("[2] Daftarkan Pendaki")
-        print("[3] Atur Kuota dan Kirim Pendaki ke Jalur")
+        print("[3] Atur Kirim Pendaki ke Jalur")
         print("[4] Cek Identitas Pendaki")
         print("[5] Cek Sisa Antrian Basecamp")
-        print("[0] Keluar")
+        print("[0] Keluar") 
         
         pilihan = input("Masukkan pilihan: ")
         
@@ -76,8 +76,8 @@ if __name__ == "__main__":
             
         elif pilihan == "3":
             try:
-                 kuota = int(input("Berapa Pendaki yang akan dikirim: "))
-                 sistem_mendaki.kirim_pendaki(kuota)
+                 kirim = int(input("Berapa Pendaki yang akan dikirim: "))
+                 sistem_mendaki.kirim_pendaki(kirim)
             except ValueError:
                 print("Input tidak valid. Harap masukkan angka untuk kuota.")
             
