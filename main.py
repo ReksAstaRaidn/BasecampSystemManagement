@@ -5,7 +5,7 @@ from GraphJalur import Graph
 class SistemManajemenPendaki:
     def __init__(self):
         #inisialisasi struktur data untuk pendaki, antrian, dan jalur
-        self.dataPendaki = Hash(size = 100)
+        self.dataPendaki = Hash(size = 1000)
         self.antrianPendaki = Queue()
         self.jalurPendakian = Graph()
         
@@ -18,10 +18,10 @@ class SistemManajemenPendaki:
             self.jalurPendakian.tambah_pos(pos)
         
         # tambahkan jalur dengan jarak antar pos
-        self.jalurPendakian.tambah_jalur("Basecamp", "Pos 1", 1.8)
-        self.jalurPendakian.tambah_jalur("Pos 1", "Pos 2", 3.2)
-        self.jalurPendakian.tambah_jalur("Pos 2", "Pos 3", 4.0)
-        self.jalurPendakian.tambah_jalur("Pos 3", "Puncak", 1.5)
+        self.jalurPendakian.tambah_jalur("Basecamp", "Pos 1", 200)
+        self.jalurPendakian.tambah_jalur("Pos 1", "Pos 2", 320)
+        self.jalurPendakian.tambah_jalur("Pos 2", "Pos 3", 400)
+        self.jalurPendakian.tambah_jalur("Pos 3", "Puncak", 150)
         print("Peta jalur pendakian telah dibuat.")
         
     def daftar_dan_antri_pendaki(self, idTicket, nama, kontak):
@@ -112,4 +112,3 @@ if __name__ == "__main__":
         
         else:
             print("Pilihan tidak valid. Pilih dari 0-5.")
-            
