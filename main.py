@@ -9,11 +9,15 @@ class SistemManajemenPendaki:
         self.antrianPendaki = Queue()
         self.jalurPendakian = Graph()
         
+    # buat peta jalur pendakian dengan jarak yang sudah ditentukan    
     def map_jalur_pendakian(self):
         pos_pendakian = ["Basecamp", "Pos 1", "Pos 2", "Pos 3", "Puncak"]
+        
+        # tambahkan pos ke dalam graph
         for pos in pos_pendakian:
             self.jalurPendakian.tambah_pos(pos)
-            
+        
+        # tambahkan jalur dengan jarak antar pos
         self.jalurPendakian.tambah_jalur("Basecamp", "Pos 1", 1.8)
         self.jalurPendakian.tambah_jalur("Pos 1", "Pos 2", 3.2)
         self.jalurPendakian.tambah_jalur("Pos 2", "Pos 3", 4.0)
@@ -21,16 +25,18 @@ class SistemManajemenPendaki:
         print("Peta jalur pendakian telah dibuat.")
         
     def daftar_dan_antri_pendaki(self, idTicket, nama, kontak):
-        # daftarkan pendaki dan tambahkan ke antrian
-        self.dataPendaki.daftar_pendaki(idTicket, nama, kontak)
-        pendaki = self.dataPendaki.verifikasi_pendaki(idTicket)
-        self.antrianPendaki.penambahan_pendaki(pendaki)
-        print(f"\nPendaki {nama} (ID: {idTicket}) telah terdaftar dan masuk antrian.")
-       
+        # daftarkan pendaki dan tambahkan ke antrian jika ID belum ada
+        if self.dataPendaki.daftar_pendaki(idTicket, nama, kontak):
+            pendaki = self.dataPendaki.verifikasi_pendaki(idTicket)
+            self.antrianPendaki.penambahan_pendaki(pendaki)
+            print(f"\nPendaki {nama} (ID: {idTicket}) telah terdaftar dan masuk antrian.")
+        else:
+            print(f"\nID Ticket {idTicket} sudah terdaftar. Gunakan ID yang berbeda untuk pendaki baru.")
+        
     def kirim_pendaki(self, kuota):
         print(f"\nMengirim pendaki ke jalur pendakian dengan kuota: {kuota}")
         dikirim = 0
-        while dikirim < kuota and not self.antrianPendaki.is_empty():
+        while dikirim < kuota and not self.antrianPendaki.is_empty(): # pastikan masih ada pendaki dalam antrian
             pendaki = self.antrianPendaki.pengurangan_pendaki()
             print(f"Pendaki {pendaki['nama']} (ID: {pendaki['id']}) telah dikirim ke jalur pendakian.")
             dikirim += 1
@@ -38,6 +44,12 @@ class SistemManajemenPendaki:
         if self.antrianPendaki.is_empty() and dikirim < kuota:
             print("Antrian pendaki sudah kosong, tidak ada lagi yang bisa dikirim.")
             
+    def tampilkan_seluruh_id_pendaki(self):
+        id_list = self.dataPendaki.cek_seluruh_id()
+        print("\nDaftar ID Ticket Pendaki yang Terdaftar:")
+        for idTicket in id_list:
+            print(f"- {idTicket}")
+        
 if __name__ == "__main__":
     sistem_mendaki = SistemManajemenPendaki()
     print("Selamat datang di Sistem Manajemen Pendaki Gunung!")
@@ -82,6 +94,7 @@ if __name__ == "__main__":
                 print("Input tidak valid. Harap masukkan angka untuk kuota.")
             
         elif pilihan == "4":
+            sistem_mendaki.tampilkan_seluruh_id_pendaki()
             cari_id = input("Masukkan ID Ticket yang ingin dicari: ")
             hasil = sistem_mendaki.dataPendaki.verifikasi_pendaki(cari_id)
             if hasil:
