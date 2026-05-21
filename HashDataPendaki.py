@@ -6,7 +6,7 @@ class Hash:
     def _hash(self, idTicket):
         #ambil angka dari idTicket
         numeric_part = int (''.join(filter(str.isdigit, idTicket)))
-        
+        #
         return numeric_part % self.size
     
     def daftar_pendaki(self, idTicket, nama, kontak):

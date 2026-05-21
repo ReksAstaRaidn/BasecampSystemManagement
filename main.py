@@ -76,8 +76,8 @@ if __name__ == "__main__":
             
         elif pilihan == "3":
             try:
-                 kirim = int(input("Berapa Pendaki yang akan dikirim: "))
-                 sistem_mendaki.kirim_pendaki(kirim)
+                kirim = int(input("Berapa Pendaki yang akan dikirim: "))
+                sistem_mendaki.kirim_pendaki(kirim)
             except ValueError:
                 print("Input tidak valid. Harap masukkan angka untuk kuota.")
             

@@ -12,7 +12,7 @@ class Queue:
         return None
     
     def is_empty(self):
-        return len(self.queue) == 0
+        return len(self.queue) == 0 # cek apakah antrian kosong
     
     def waktu_tunggu(self):
-        return len(self.queue) 
+        return len(self.queue) # hitung jumlah pendaki dalam antrian untuk estimasi waktu tunggu

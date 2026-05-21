@@ -7,6 +7,7 @@ class Graph:
     def __init__(self):
         self.adjacency_list = {}
         
+        #posisi untuk visualisasi dengan graphviz (x, y)
         self.posisi = {
             "Basecamp": "0, 0!",
             "Pos 1": "-1.2, 2.5!",
@@ -15,22 +16,26 @@ class Graph:
             "Puncak": "0, 10.0!"
         }
         
+    # tambah pos baru ke dalam graph
     def tambah_pos(self, pos):
        if pos not in self.adjacency_list:
            self.adjacency_list[pos] = []
-           
+    
+    #tambah jalur antara dua pos dengan jarak tertentu
     def tambah_jalur(self, pos1, pos2, jarak):
         if pos1 in self.adjacency_list and pos2 in self.adjacency_list:
            self.adjacency_list[pos1].append({"ke": pos2, "jarak": jarak})
            self.adjacency_list[pos2].append({"ke": pos1, "jarak": jarak})
-           
+    
+    #tampilkan jalur dengan format yang lebih rapi
     def show_jalur(self):
         print("\nJalur Pendakian:")
         #tampilkan jalur dengan format yang lebih rapi
         for pos, jalur in self.adjacency_list.items():
             koneksi = ", ".join([f"{j['ke']} (jarak: {j['jarak']} km)" for j in jalur])
             print(f"[{pos}] terhubung ke: {koneksi if koneksi else 'Tidak ada jalur'}")
-            
+    
+    
     def visualisasi_jalur(self):
         print("\nVisualisasi Jalur Pendakian:")
         #buat graph tak berarah dengan graphviz
@@ -41,31 +46,38 @@ class Graph:
         dot.attr('node', shape='ellipse', style='filled', color='darkgreen', fontcolor='white', fontsize='11', width='1,2', height='0.6', fontname='Helvetica')
         dot.attr('edge', color='gray', style='dashed', fontcolor='red', fontname='Helvetica', fontsize='16', arrowsize='0.7')
         
+        #tambahkan node dengan posisi yang sudah ditentukan
         for pos in self.adjacency_list.keys():
             if pos in self.posisi:
                 dot.node(pos, pos, pos=self.posisi[pos])
             else:
                 dot.node(pos, pos)
-            
+        
+        #tambahkan edge dengan label jarak dan pastikan tidak menggambar edge ganda
         drawn_edges = set()
         
+        #iterasi semua jalur untuk menambahkan edge ke graph
         for pos, jalur in self.adjacency_list.items():
             for j in jalur:
                 target = j['ke']
                 jarak = j['jarak']
                 
+                #buat edge dengan urutan yang konsisten untuk menghindari duplikasi
                 edge = tuple(sorted([pos, target]))
                 if edge not in drawn_edges:
                     dot.edge(pos, target, label=f"{jarak} km")
                     drawn_edges.add(edge)
-                    
+        
+        #render graph ke file sementara dan tampilkan dengan matplotlib        
         try:
             filename = 'jalur_pendakian'
             dot.render(filename, format='png', view=False, cleanup=True)
             
+            #
             img_path = f"{filename}.png"
             img = mpimg.imread(img_path)
             
+            # tampilkan gambar dengan matplotlib
             fig, ax = plt.subplots(figsize=(7, 9))
             ax.imshow(img)
             ax.axis('off')
