@@ -1,6 +1,6 @@
-# 🏔️ Sistem Manajemen Pendaki Gunung
+# 🏔️ Sistem Manajemen Basecamp Pendakian
 
-Sistem Manajemen Pendaki Gunung adalah aplikasi berbasis CLI (Command Line Interface) yang dirancang untuk membantu petugas basecamp dalam mengelola pendaftaran pendaki, mengatur antrian keberangkatan, serta memvisualisasikan jalur pendakian. 
+Sistem Manajemen Basecamp Pendakian adalah aplikasi berbasis CLI (Command Line Interface) yang dirancang untuk membantu petugas basecamp dalam mengelola pendaftaran pendaki, mengatur antrian keberangkatan, serta memvisualisasikan jalur pendakian. 
 
 Proyek ini dibuat untuk mengimplementasikan tiga Struktur Data utama secara efisien: **Hash Table**, **Queue (Antrian)**, dan **Graph**.
 
