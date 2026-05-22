@@ -1,4 +1,4 @@
-# 🏔️ Sistem Manajemen Basecamp Pendakian
+# Sistem Manajemen Basecamp Pendakian
 
 Sistem Manajemen Basecamp Pendakian adalah aplikasi berbasis CLI (Command Line Interface) yang dirancang untuk membantu petugas basecamp dalam mengelola pendaftaran pendaki, mengatur antrian keberangkatan, serta memvisualisasikan jalur pendakian. 
 
@@ -6,7 +6,7 @@ Proyek ini dibuat untuk mengimplementasikan tiga Struktur Data utama secara efis
 
 ---
 
-## 🚀 Fitur Utama
+## Fitur Utama
 
 Aplikasi ini menyediakan berbagai fitur manajemen basecamp, antara lain:
 
@@ -17,7 +17,7 @@ Aplikasi ini menyediakan berbagai fitur manajemen basecamp, antara lain:
 
 ---
 
-## 🛠️ Struktur Struktur Data & File
+## Struktur Struktur Data & File
 
 Proyek ini dibagi menjadi beberapa modul berbasis objek (OOP) untuk mempermudah pemeliharaan kode:
 
@@ -28,7 +28,7 @@ Proyek ini dibagi menjadi beberapa modul berbasis objek (OOP) untuk mempermudah 
 
 ---
 
-## 📋 Prasyarat Sistem
+## Prasyarat Sistem
 
 Sebelum menjalankan program, pastikan perangkat Anda telah memenuhi spesifikasi berikut:
 
@@ -42,11 +42,10 @@ Agar fitur **Visualisasi Grafis** berjalan dengan lancar, Anda tidak hanya membu
 
 ---
 
-## 💻 Cara Instalasi & Menjalankan Program
+## Cara Instalasi & Menjalankan Program
 
 Ikuti langkah-langkah di bawah ini untuk menjalankan program di komputer Anda:
 
 ### 1. Clone Repositori
 ```bash
-git clone [https://github.com/username-anda/nama-repositori.git](https://github.com/username-anda/nama-repositori.git)
-cd nama-repositori
+git clone 
