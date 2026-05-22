@@ -48,7 +48,7 @@ Ikuti langkah-langkah di bawah ini untuk menjalankan program di komputer Anda:
 
 ### 1. Clone Repositori
 ```bash
-git clone 
+git clone https://github.com/ReksAstaRaidn/BasecampSystemManagement.git
 ```
 
 ### 2. Masuk ke VSCode dan langsung jalankan Program main nya, atau jalankan di terminal di direktori program nya diletakkan
