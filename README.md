@@ -48,4 +48,4 @@ Ikuti langkah-langkah di bawah ini untuk menjalankan program di komputer Anda:
 
 ### 1. Clone Repositori
 ```bash
-git clone 
+git clone https://github.com/ReksAstaRaidn/BasecampSystemManagement.git
