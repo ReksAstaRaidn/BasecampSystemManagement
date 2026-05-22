@@ -47,9 +47,12 @@ Agar fitur **Visualisasi Grafis** berjalan dengan lancar, Anda tidak hanya membu
 Ikuti langkah-langkah di bawah ini untuk menjalankan program di komputer Anda:
 
 ### 1. Clone Repositori
-```bash
-git clone https://github.com/ReksAstaRaidn/BasecampSystemManagement.git
+'''bash
+git clone 
 '''
+
 ### 2. Masuk ke VSCode dan langsung jalankan Program main nya, atau jalankan di terminal di direktori program nya diletakkan
 '''bash
 python main.py
+'''
+
