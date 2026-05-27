@@ -6,10 +6,10 @@ class Queue:
         self.queue.append(idTicket)
         
     def pengurangan_pendaki(self):
-        #jika antrian tidak kosong, keluarkan pendaki pertama
+        # pastikan antrian tidak kosong sebelum mengurangi pendaki
         if not self.is_empty():
-            pendaki_keluar = self.queue.pop(0)
-            return pendaki_keluar
+            pendaki_keluar = self.queue.pop(0) # ambil pendaki paling depan dari antrian
+            return pendaki_keluar # kembalikan ID pendaki yang keluar
         return None
     
     def is_empty(self):
