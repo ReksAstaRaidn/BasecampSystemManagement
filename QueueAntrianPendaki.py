@@ -8,7 +8,8 @@ class Queue:
     def pengurangan_pendaki(self):
         #jika antrian tidak kosong, keluarkan pendaki pertama
         if not self.is_empty():
-            return self.queue.pop(0)
+            pendaki_keluar = self.queue.pop(0)
+            return pendaki_keluar
         return None
     
     def is_empty(self):
