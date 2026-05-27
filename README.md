@@ -24,7 +24,8 @@ Proyek ini dibagi menjadi beberapa modul berbasis objek (OOP) untuk mempermudah 
 1.  **`HashDataPendaki.py` (`Class Hash`)**: Menangani penyimpanan data pendaki secara aman menggunakan metode *Separate Chaining* untuk menangani kolisi indeks.
 2.  **`QueueAntrianPendaki.py` (`Class Queue`)**: Mengelola antrian masuk dan keluar pendaki di basecamp.
 3.  **`GraphJalur.py` (`Class Graph`)**: Memetakan koordinat pos pendakian dan merender visualisasi peta menggunakan bantuan library grafis dengan tambahan kompas penunjuk arah.
-4.  **`main.py`**: Berperan sebagai kontroler utama yang menyatukan seluruh modul dan menyediakan antarmuka menu untuk pengguna (petugas).
+4.  **`StackRiwayat.py` (`Class Stack`)**: Mengelola riwayat para pendaki setelah dikirim kan agar petugas dapat melihat list para pendaki yang sudah dikirim
+5.  **`main.py`**: Berperan sebagai kontroler utama yang menyatukan seluruh modul dan menyediakan antarmuka menu untuk pengguna (petugas).
 
 ---
 
